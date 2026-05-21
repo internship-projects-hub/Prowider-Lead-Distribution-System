@@ -2,26 +2,30 @@
   "name": "prowider-lead-distribution-system",
   "version": "1.0.0",
   "description": "Mini backend-heavy CRM for automated lead assignment with concurrency safety, fair round-robin distribution, quota system, real-time updates, and webhook idempotency.",
-  "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js",
-    "dev": "nodemon src/server.js",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
-    "prisma:seed": "node prisma/seed.js"
+    "prisma:seed": "prisma db seed"
   },
   "dependencies": {
     "@prisma/client": "^5.14.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "next": "^14.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0",
-    "prisma": "^5.14.0"
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "prisma": "^5.14.0",
+    "tsx": "^4.11.0",
+    "typescript": "^5.4.5"
   },
   "prisma": {
-    "seed": "node prisma/seed.js"
+    "seed": "tsx prisma/seed.ts"
   },
   "private": true
 }
